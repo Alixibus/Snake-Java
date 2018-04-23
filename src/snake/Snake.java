@@ -60,7 +60,7 @@ public class Snake implements ActionListener, KeyListener
 	public void startSnake()
 	{
 		score = 0;		
-		snakeLength = 0;
+		snakeLength = 1;
 		tick = 0;
 		outOfBounds = false;
 		direction = right;
@@ -93,7 +93,7 @@ public class Snake implements ActionListener, KeyListener
 		panel.repaint();
 		tick++;		
 		
-		if(tick % difficulty == 0 && snakeHead != null && outOfBounds != true) // every half second do the following
+		if(tick % 2 == 0 && snakeHead != null && outOfBounds != true) // every half second do the following
 		{
 			parts.add((Point)snakeHead.clone());
 			if (direction == up)
